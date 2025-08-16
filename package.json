@@ -8,9 +8,10 @@
     "build": "npm run prisma:deploy",
     "start": "node src/index.js",
     "prisma:dev": "npx prisma migrate dev --name init --schema=src/prisma/schema.prisma && npx prisma generate --schema=src/prisma/schema.prisma",
-    "prisma:deploy": "npx prisma migrate deploy --schema=src/prisma/schema.prisma && npx prisma generate --schema=src/prisma/schema.prisma",
+    "prisma:deploy": "npx prisma migrate deploy --schema=src/prisma/schema.prisma",
     "prisma:reset": "npx prisma migrate reset --schema=src/prisma/schema.prisma --force",
-    "seed": "node src/seed.js"
+    "seed": "node src/seed.js",
+    "postinstall": "prisma generate --schema=src/prisma/schema.prisma"
   },
   "dependencies": {
     "@prisma/client": "^5.16.1",
