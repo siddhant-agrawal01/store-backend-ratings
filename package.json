@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "node src/index.js",
-    "build": "echo 'Nothing to build for server'",
+    "build": "npm run prisma:deploy",
     "start": "node src/index.js",
     "prisma:dev": "npx prisma migrate dev --name init --schema=src/prisma/schema.prisma && npx prisma generate --schema=src/prisma/schema.prisma",
     "prisma:deploy": "npx prisma migrate deploy --schema=src/prisma/schema.prisma && npx prisma generate --schema=src/prisma/schema.prisma",
